@@ -21,27 +21,27 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import com.example.android.databinding.basicsample.R
-import com.example.android.databinding.basicsample.data.SimpleViewModelSolution
-import com.example.android.databinding.basicsample.databinding.PlainActivitySolution4Binding
+import com.example.android.databinding.basicsample.data.SimpleViewModel
+import com.example.android.databinding.basicsample.databinding.PlainActivityBinding
 
 /**
- * Fourth version of the Activity in the codelab.
+ * Plain old activity with lots of problems to fix.
  */
-class PlainOldActivitySolution4 : AppCompatActivity() {
+class EdwinActivity : AppCompatActivity() {
 
     // Obtain ViewModel from ViewModelProviders
     private val viewModel by lazy {
-        ViewModelProviders.of(this).get(SimpleViewModelSolution::class.java)
+        ViewModelProviders.of(this).get(SimpleViewModel::class.java)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val binding: PlainActivitySolution4Binding =
-            DataBindingUtil.setContentView(this, R.layout.plain_activity_solution_4)
+        val binding: PlainActivityBinding = DataBindingUtil.setContentView(this, R.layout.plain_activity)
 
-        binding.lifecycleOwner = this  // use Fragment.viewLifecycleOwner for fragments
+        binding.lifecycleOwner = this
 
         binding.viewmodel = viewModel
     }
+
 }

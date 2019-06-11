@@ -37,8 +37,7 @@ class SolutionActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val binding: SolutionBinding =
-            DataBindingUtil.setContentView(this, R.layout.solution)
+        val binding: SolutionBinding = DataBindingUtil.setContentView(this, R.layout.solution)
 
         binding.lifecycleOwner = this  // use Fragment.viewLifecycleOwner for fragments
 
